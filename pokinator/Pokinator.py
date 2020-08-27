@@ -17,3 +17,12 @@ if __name__ == "__main__":
     
     # Grabbing the data and setting up the calculations
     calculator = setup(file_directory)
+
+    # Running the actual game
+    while True:
+        done, question = calculator.generate_question()
+        print(question)
+        if done:
+            break
+        answer = int(input("Is this true (1), false (-1) or are you unsure (0)?: "))
+        calculator.resolve_question(answer)
